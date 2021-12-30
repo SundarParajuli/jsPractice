@@ -1,0 +1,22 @@
+{
+  "dependencies": {
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15"
+  },
+  "name": "jspractice",
+  "version": "1.0.0",
+  "description": "just a beginner project learning mean stack",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "keywords": [
+    "nodejs",
+    "mongoDb",
+    "expressjs",
+    "angularjs"
+  ],
+  "author": "Sundar Parajuli",
+  "license": "ISC"
+}
