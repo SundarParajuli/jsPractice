@@ -1,14 +1,16 @@
-const http = require("http");
+const express = require("express")
+const app = express()
+app.set("port",3000)
 
-const host = 'localhost';
-const port = 8000;
+app.get("/", function(req, res) {
+    console.log("GET received");
+    res.status(404).send("Received your GET request.");
+    });
 
-const requestListener = function (req, res) {};
-
-const server = http.createServer(requestListener);
-server.listen(port, host, () => {
-    console.log(`Server is running on http://${host}:${port}`);
-});
+const server= app.listen(app.get("port"), function() {
+    const port= server.address().port;
+    console.log("Listening to port "+ port);
+})
 
 const greeter = require("./greeter")
 const ab =require('./intro')
@@ -18,12 +20,10 @@ console.log(greeter.greetName(name)+ greeter.report)
 
 
 const fib = (number) => {
-    if(number<=2){
+    if(number<=2)
         return 1;
-    }else{
-       
-        return fib(number-1)+fib(number-2)
-    }
+    return fib(number-1)+fib(number-2)
 }
 
 console.log("Fibonacci of 45 is "+ fib(11))
+
